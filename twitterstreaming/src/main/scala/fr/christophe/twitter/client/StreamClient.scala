@@ -1,6 +1,9 @@
 package fr.christophe.twitter.client
 
+import java.io.PrintWriter
+
 import scalaj.http._
+import twitter4j._
 
 class StreamClient {
 
@@ -44,16 +47,38 @@ class StreamClient {
 
     import twitter4j.TwitterStream
     import twitter4j.TwitterStreamFactory
-    val twitterStream = new TwitterStreamFactory(configurationBuilder.build).getInstance
+    import scala.io.Source
+      import java.io.File
 
+      val twitterStream = new TwitterStreamFactory(configurationBuilder.build).getInstance
 
-    twitterStream.addListener(
+      val outputFileName = getClass.getClassLoader.getResource(".").getFile
+      println(s"file : ${outputFileName}")
+      val writer = new PrintWriter(new File(outputFileName).getParent + "/statusOutput")
+
+      twitterStream.addListener(new RawStreamListener() {
+
+        override def  onMessage( rawJSON: String) = {
+          System.out.println(rawJSON)
+        }
+
+        override def onException(ex : Exception ) {
+          ex.printStackTrace()
+        }
+      }).sample()
+
+/*
+      twitterStream.addListener(
         new StatusListener {
           override def onDeletionNotice(statusDeletionNotice: StatusDeletionNotice): Unit = System.out.println("Got a status deletion notice id:" + statusDeletionNotice.getStatusId())
 
           override def onScrubGeo(userId: Long, upToStatusId: Long): Unit = System.out.println("Got scrub_geo event userId:" + userId + " upToStatusId:" + upToStatusId)
 
-          override def onStatus(status: Status): Unit = System.out.println(status.getText()) // print tweet text to console
+          override def onStatus(status: Status): Unit = {
+            System.out.println(status.getText())
+            writer.write(status.getText)
+            writer.flush()
+          } // print tweet text to console
 
           override def onTrackLimitationNotice(numberOfLimitedStatuses: Int): Unit = System.out.println("Got track limitation notice:" + numberOfLimitedStatuses)
 
@@ -61,7 +86,9 @@ class StreamClient {
 
           override def onException(e: Exception): Unit = e.printStackTrace()
         })
-    twitterStream.sample().
+*/
+    twitterStream.sample()
+      writer.close()
   }
 
 

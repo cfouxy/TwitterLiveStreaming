@@ -9,7 +9,7 @@ import fr.christophe.twitter.client.StreamClient
 object Main extends App {
   println( "Begin!" )
 
-  new StreamClient().keepAliveConnetion()
+  new StreamClient().client()
 
   println( "End!" )
 
