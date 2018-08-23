@@ -7,6 +7,7 @@ import java.util.regex.Pattern
 import twitter4j._
 import twitter4j.TwitterStreamFactory
 import twitter4j.conf.ConfigurationBuilder
+import fr.christophe.twitter.Decision.getApplication
 
 class StreamClient {
 
@@ -31,7 +32,7 @@ class StreamClient {
       override def onMessage(rawJSON: String) = {
         //System.out.println(rawJSON)
         val status: Status  = TwitterObjectFactory.createStatus(rawJSON)
-        filter(status)
+        getApplication(status)
 
       }
 
@@ -44,20 +45,4 @@ class StreamClient {
   }
 
 
-  def filter(text: String): Unit = {
-
-    val Pattern = ".*(http|https)://(.*)".r
-
-    text match {
-      case Pattern(_) => println(s"HTTP : ${text}")
-      case _ => println(s"NO HTTP : ${text}")
-    }
-
-
-
-  }
-
-  def filter(status: Status): Unit = {
-    filter(status.getText)
-  }
 }
