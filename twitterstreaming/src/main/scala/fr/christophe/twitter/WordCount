@@ -1,0 +1,5 @@
+package fr.christophe.twitter.application
+
+class WordCount extends Application {
+
+}
