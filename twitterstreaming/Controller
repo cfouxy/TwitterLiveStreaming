@@ -1,0 +1,52 @@
+package com.socgen.drhg.dhr.api.controllers
+
+import com.github.xiaodongw.swagger.finatra.SwaggerSupport
+import com.google.inject.Inject
+import com.socgen.drhg.dhr.api.models.EntityBvHistoryManagement
+import com.socgen.drhg.dhr.api.services.EnrichmentService
+import com.socgen.drhg.dhr.api.{CommonLogger, DataHubSwagger, LOG_TYPE}
+import com.twitter.finagle.http.Request
+import com.twitter.finatra.http.Controller
+import org.apache.commons.lang.exception.ExceptionUtils
+
+import scala.util.{Failure, Success, Try}
+
+class EnrichmentController @Inject()(enrichmentService: EnrichmentService, Logger: CommonLogger)
+  extends Controller with SwaggerSupport {
+
+  override implicit protected val swagger = DataHubSwagger
+
+  get(s"/draft/enrichment-info", swagger { o =>
+    o.summary("Get info about enrichment")
+      .description("Get info about enrichment")
+      .tag("Enrichment")
+      .produces("application/json")
+      .headerParam[String]("Authorization", "Authorization Token")
+      .responseWith[EntityBvHistoryManagement](200, "Ok")
+      .responseWith[Unit](404, "Resource Not Found")
+      .responseWith[Unit](500, "Internal Server Error")
+  }) {
+    request: Request =>
+      Logger.info(LOG_TYPE.APPLICATIVE, s"Resource /draft/enrichment-info requested")
+      Try(enrichmentService.fetchEnrichmentInfo) match {
+        case Success(enrichmentInfo) =>
+
+          if (enrichmentInfo.nonEmpty) {
+            Logger.info(LOG_TYPE.APPLICATIVE, s"Resource /draft/enrichment-info requested with success")
+            logger.info(s"Enrichment information found")
+            response.ok.body(enrichmentInfo)
+          } else {
+            Logger.warn(LOG_TYPE.APPLICATIVE, s"Resource /draft/enrichment-info not found")
+            logger.warn(s"Resource not found")
+            response.notFound
+          }
+
+        case Failure(e) =>
+          logger.error(s"Service is unavailable: ${e.getMessage}", e)
+          Logger.error(LOG_TYPE.APPLICATIVE, s"Resource /draft/enrichment-info is unavailable")
+          Logger.error(LOG_TYPE.APPLICATIVE, s" ${ExceptionUtils.getStackTrace(e)}")
+          response.internalServerError
+      }
+  }
+
+}
