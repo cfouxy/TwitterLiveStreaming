@@ -5,6 +5,6 @@ import twitter4j.Status
 
 trait Application {
 
-  def run(statusRDD : RDD[Status]) = ???
+  def run(statusRDD : RDD[Status]): Unit
 
 }

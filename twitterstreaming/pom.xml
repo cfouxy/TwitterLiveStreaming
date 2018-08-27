@@ -42,11 +42,11 @@
     <version>${scalaj.version}</version>
   </dependency>
     <!-- https://mvnrepository.com/artifact/org.twitter4j/twitter4j-stream -->
-    <dependency>
-      <groupId>org.twitter4j</groupId>
-      <artifactId>twitter4j-stream</artifactId>
-      <version>${twitter4j.version}</version>
-    </dependency>
+    <!--<dependency>-->
+      <!--<groupId>org.twitter4j</groupId>-->
+      <!--<artifactId>twitter4j-stream</artifactId>-->
+      <!--<version>${twitter4j.version}</version>-->
+    <!--</dependency>-->
     <dependency>
       <groupId>org.specs2</groupId>
       <artifactId>specs2_${scala.tool.version}</artifactId>
@@ -70,6 +70,12 @@
           <groupId>org.apache.bahir</groupId>
           <artifactId>spark-streaming-twitter_${scala.tool.version}</artifactId>
           <version>${spark.version}</version>
+          <exclusions>
+              <exclusion>
+                  <groupId>org.apache.spark</groupId>
+                  <artifactId>slf4j-log4j12</artifactId>
+              </exclusion>
+          </exclusions>
       </dependency>
       <dependency>
           <groupId>org.apache.spark</groupId>
@@ -79,6 +85,10 @@
               <exclusion>
                   <groupId>org.slf4j</groupId>
                   <artifactId>slf4j-log4j12</artifactId>
+              </exclusion>
+              <exclusion>
+                  <groupId>org.apache.hadoop</groupId>
+                  <artifactId>*</artifactId>
               </exclusion>
           </exclusions>
       </dependency>
@@ -103,6 +113,12 @@
           <artifactId>spark-yarn_${scala.tool.version}</artifactId>
           <version>${spark.version}</version>
       </dependency>
+      <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+      <dependency>
+          <groupId>org.postgresql</groupId>
+          <artifactId>postgresql</artifactId>
+          <version>42.2.4</version>
+      </dependency>
   </dependencies>
 
 
@@ -126,6 +142,7 @@
   <build>
     <sourceDirectory>src/main/scala</sourceDirectory>
     <testSourceDirectory>src/test/scala</testSourceDirectory>
+
     <plugins>
       <plugin>
         <groupId>org.scala-tools</groupId>
@@ -140,9 +157,6 @@
         </executions>
         <configuration>
           <scalaVersion>${scala.version}</scalaVersion>
-          <args>
-            <arg>-target:jvm-1.5</arg>
-          </args>
         </configuration>
       </plugin>
     </plugins>

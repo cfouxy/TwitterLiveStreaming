@@ -1,10 +1,9 @@
 package fr.christophe.twitter.application
-
 import org.apache.spark.rdd.RDD
 import twitter4j.Status
 
-trait Application {
+class UrlDereferencing extends Application {
 
-  def run(statusRDD : RDD[Status]) = ???
+  override def run(statusRDD: RDD[Status]): Unit = ???
 
 }
