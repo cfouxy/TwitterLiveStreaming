@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="front" />
         <module name="twitterstreaming" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="front" target="1.8" />
       <module name="twitterstreaming" target="1.5" />
     </bytecodeTargetLevel>
   </component>
