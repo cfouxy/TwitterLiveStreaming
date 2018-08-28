@@ -2,18 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6458eae2-7dd7-4b9a-8e73-b53d0dd892cf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/TwitterLiveStreaming.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TwitterLiveStreaming.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitterstreaming/Controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitterstreaming/api_pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitterstreaming/server.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twitterstreaming/service.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/scala_sdk_2_12_6.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/scala_compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/scala_compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitterstreaming/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/twitterstreaming/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitterstreaming/target/classes/statusOutput" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitterstreaming/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitterstreaming/target/statusOutput" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitterstreaming/twitterstreaming.iml" beforeDir="false" afterPath="$PROJECT_DIR$/twitterstreaming/twitterstreaming.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/twitterstreaming/src/main/scala/fr/christophe/twitter/application/UrlDereferencing.scala" beforeDir="false" afterPath="$PROJECT_DIR$/twitterstreaming/src/main/scala/fr/christophe/twitter/application/UrlDereferencing.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/twitterstreaming/src/main/scala/fr/christophe/twitter/application/WordCount.scala" beforeDir="false" afterPath="$PROJECT_DIR$/twitterstreaming/src/main/scala/fr/christophe/twitter/application/WordCount.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/twitterstreaming/src/main/scala/fr/christophe/twitter/dao/PostgreSQLConnection.scala" beforeDir="false" afterPath="$PROJECT_DIR$/twitterstreaming/src/main/scala/fr/christophe/twitter/dao/PostgreSQLConnection.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/twitterstreaming/src/main/scala/fr/christophe/twitter/dao/WordsCountDao.scala" beforeDir="false" afterPath="$PROJECT_DIR$/twitterstreaming/src/main/scala/fr/christophe/twitter/dao/WordsCountDao.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/twitterstreaming/src/main/scala/fr/christophe/twitter/spark/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/twitterstreaming/src/main/scala/fr/christophe/twitter/spark/Main.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/twitterstreaming/target/" />
     <ignored path="$PROJECT_DIR$/front/target/" />
@@ -45,7 +46,7 @@
           <entry key="scala" value="20" />
           <entry key="statusOutput" value="6" />
           <entry key="txt" value="1" />
-          <entry key="xml" value="6" />
+          <entry key="xml" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -56,7 +57,7 @@
           <entry key="PLAIN_TEXT" value="11" />
           <entry key="Properties" value="1" />
           <entry key="Scala" value="20" />
-          <entry key="XML" value="6" />
+          <entry key="XML" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -77,62 +78,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/twitterstreaming/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front/src/main/scala/fr/christophe/Controller.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
-              <folding>
-                <element signature="e#24#82#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front/src/main/scala/fr/christophe/Server.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-344">
-              <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/twitterstreaming/src/main/scala/fr/christophe/twitter/spark/Main.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
-              <folding>
-                <element signature="e#37#74#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="17">
+              <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -164,10 +114,10 @@
         <option value="$PROJECT_DIR$/twitterstreaming/src/main/scala/fr/christophe/twitter/dao/PostgreSQLConnection.scala" />
         <option value="$PROJECT_DIR$/twitterstreaming/src/main/scala/fr/christophe/twitter/dao/WordsCountDao.scala" />
         <option value="$PROJECT_DIR$/twitterstreaming/src/main/scala/fr/christophe/twitter/WordCount.scala" />
-        <option value="$PROJECT_DIR$/twitterstreaming/pom.xml" />
         <option value="$PROJECT_DIR$/front/src/main/scala/fr/christophe/Controller.scala" />
         <option value="$PROJECT_DIR$/front/src/main/scala/fr/christophe/Server.scala" />
         <option value="$PROJECT_DIR$/front/pom.xml" />
+        <option value="$PROJECT_DIR$/twitterstreaming/pom.xml" />
       </list>
     </option>
   </component>
@@ -181,20 +131,6 @@
   <component name="MavenProjectNavigator">
     <treeState>
       <expand>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="front" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="front" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="front" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
-        </path>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="twitter-streaming" type="9519ce18:MavenProjectsStructure$ProjectNode" />
@@ -276,37 +212,7 @@
             <path>
               <item name="TwitterLiveStreaming" type="b2602c69:ProjectViewProjectNode" />
               <item name="TwitterLiveStreaming" type="462c0819:PsiDirectoryNode" />
-              <item name="front" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TwitterLiveStreaming" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TwitterLiveStreaming" type="462c0819:PsiDirectoryNode" />
-              <item name="front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TwitterLiveStreaming" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TwitterLiveStreaming" type="462c0819:PsiDirectoryNode" />
-              <item name="front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TwitterLiveStreaming" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TwitterLiveStreaming" type="462c0819:PsiDirectoryNode" />
-              <item name="front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="scala" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TwitterLiveStreaming" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TwitterLiveStreaming" type="462c0819:PsiDirectoryNode" />
-              <item name="front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="scala" type="462c0819:PsiDirectoryNode" />
-              <item name="christophe" type="462c0819:PsiDirectoryNode" />
+              <item name="twitterstreaming" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -425,7 +331,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49337748" visible="true" weight="0.24200426" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49337748" visible="true" weight="0.24200426" />
       <window_info id="Structure" order="1" sideWeight="0.5066225" side_tool="true" weight="0.18656716" />
       <window_info id="Designer" order="2" />
       <window_info id="Learn" order="3" sideWeight="0.49884528" weight="0.32910448" />
@@ -439,7 +345,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.5195228" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.5195228" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3286334" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -701,13 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/twitterstreaming/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front/src/main/scala/fr/christophe/Controller.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -736,6 +635,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twitterstreaming/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
         </state>
       </provider>
     </entry>

@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/TwitterLiveStreaming.iml" filepath="$PROJECT_DIR$/.idea/TwitterLiveStreaming.iml" />
-      <module fileurl="file://$PROJECT_DIR$/front/front.iml" filepath="$PROJECT_DIR$/front/front.iml" />
       <module fileurl="file://$PROJECT_DIR$/twitterstreaming/twitterstreaming.iml" filepath="$PROJECT_DIR$/twitterstreaming/twitterstreaming.iml" />
     </modules>
   </component>
