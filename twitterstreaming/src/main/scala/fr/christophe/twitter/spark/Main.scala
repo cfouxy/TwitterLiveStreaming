@@ -13,9 +13,12 @@ object Main extends App {
   System.setProperty("twitter4j.oauth.accessTokenSecret", "2AYOkNIWoMLMrbClJfUohUYijlXnlTMo9AEQVM2WBerYY")
 
   implicit val sparkConf = new SparkConf().setMaster("local[*]").setAppName("TwitterLiveStreaming")
-  implicit val ssc = new StreamingContext(sparkConf, Seconds(2))
+  implicit val ssc = new StreamingContext(sparkConf, Seconds(10))
 
   startStreaming
+
+  ssc.start()
+  ssc.awaitTermination()
 
   def startStreaming() (implicit ssc: StreamingContext) = {
 
@@ -24,7 +27,7 @@ object Main extends App {
     stream.foreachRDD(
       statusRDD =>
         statusRDD.foreach(
-          status => Decision.getApplication(status).run()))
+          status => Decision.getApplication(status).run(statusRDD)))
 
   }
 

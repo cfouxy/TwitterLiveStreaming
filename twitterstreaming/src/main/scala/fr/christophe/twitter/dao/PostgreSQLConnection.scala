@@ -3,7 +3,7 @@ package fr.christophe.twitter.dao
 import java.sql._
 
 object PostgreSQLConnection {
- // tweets_wordCounters_word_idx
+  // tweets_wordCounters_word_idx
 
   classOf[org.postgresql.Driver]
   private val server = "localhost"

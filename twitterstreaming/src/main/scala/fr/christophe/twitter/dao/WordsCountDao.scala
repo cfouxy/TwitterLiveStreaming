@@ -13,7 +13,7 @@ object WordsCountDao {
   def getCount(word: String): WordCount = {
 
     val resultSet = PostgreSQLConnection.executeSelect(
-    s"SELECT * from tweets.WORD_COUNTERS where word = $word"
+      s"SELECT * from tweets.WORD_COUNTERS where word = $word"
     )
     allCatch opt getResult(resultSet).head getOrElse WordCount(None, word = word, counter = 0)
   }
@@ -37,7 +37,7 @@ object WordsCountDao {
   @scala.annotation.tailrec
   def getResult(resultSet: ResultSet, list: List[WordCount] = Nil): List[WordCount] = {
     if (resultSet.next()) {
-      val value = resultSet.getObject[WordCount](0, Class[WordCount])
+      val value = resultSet.getObject[WordCount](0, classOf[WordCount])
       getResult(resultSet, value :: list)
     }
     else {
