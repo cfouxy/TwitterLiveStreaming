@@ -27,8 +27,7 @@ object WordsCountDao {
 
     } else {
 
-      PostgreSQLConnection.executeInsert(
-        "insert into users (first,last,age) values (?,?,?)", wordCount)
+      // PostgreSQLConnection.executeInsert
     }
 
 
